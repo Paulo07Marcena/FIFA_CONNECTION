@@ -1,0 +1,241 @@
+body {
+  display: flex;
+  flex-direction: column;
+}
+/* Primeira sessão da página */
+.firstSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+#video-background {
+  width: 100%;
+  height: 100%;
+
+  top: 0;
+  left: 0;
+  z-index: -1;
+
+  position: absolute;
+  object-fit: cover;
+}
+.firstBackground {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  background-color: rgba(0, 0, 0, 0.698);
+}
+
+.firstBackground .content {
+  width: auto;
+
+  margin-left: 10%;
+
+  color: #fff;
+  font-size: 20px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.firstBackground .content .FIFA {
+  font-size: 50px;
+  position: absolute;
+}
+.firstBackground .content .connection {
+  font-size: 50px;
+  color: #ffffff;
+
+  margin-left: 66px;
+}
+.firstBackground .content button {
+  width: 310px;
+  height: 40px;
+
+  color: #fff;
+  font-size: 25px;
+
+  border: 5px solid #fff;
+
+  cursor: pointer;
+  transition: ease-in 0.5s;
+
+  background-color: transparent;
+}
+.firstBackground .content button:hover {
+  background-color: #e0b740;
+  border: 5px solid #e0b740;
+}
+.div-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 3px;
+
+  height: 30px;
+
+  animation: seeMore 0.7s infinite;
+}
+.more {
+  width: auto;
+  height: 30px;
+}
+
+@keyframes seeMore {
+  0% {
+    padding-bottom: 0;
+  }
+  50% {
+    padding-bottom: 1px;
+  }
+  100% {
+    padding-bottom: 3px;
+  }
+}
+
+/* Segunda sessão da página */
+.secondSection {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+
+  position: relative; /* Adicione essa propriedade */
+
+  background-color: #f6f6f6;
+}
+.secondSection .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  margin: 25px 0px 25px 0px;
+}
+.secondSection .logo {
+  height: 150px;
+  width: 100px;
+}
+.secondSection .all {
+  display: flex;
+}
+.secondSection .all .text {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+.text .title {
+  color: #e0b740;
+  font-size: 50px;
+}
+.text .descrition {
+  font-size: 18px;
+}
+
+.secondSection .content button {
+  width: 310px;
+  height: 40px;
+
+  margin-top: 38px;
+
+  color: #000000;
+  font-size: 25px;
+
+  border: 5px solid #e0b740;
+
+  cursor: pointer;
+  transition: ease-in 0.5s;
+
+  background-color: transparent;
+}
+.secondSection .content button:hover {
+  color: #fff;
+  background-color: #e0b740;
+  border: 5px solid #e0b740;
+}
+
+#meu-video {
+  width: 100%;
+  height: 71%;
+
+  object-fit: cover;
+}
+
+/* Terceira seção da página */
+.thirdSection {
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  /* position: relative; Adicione essa propriedade */
+
+  background: #1b1b1b;
+}
+.thirdSection .div-title {
+  width: 100%;
+
+  margin-top: 30px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}
+.div-title .title {
+  color: #e0b740;
+  font-size: 70px;
+}
+.div-title .descrition {
+  color: #fff;
+  font-style: italic;
+  font-size: 20px;
+}
+.thirdSection .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px;
+}
+.thirdSection .content div {
+  display: flex;
+}
+.cards {
+  height: 65vh;
+  position: relative;
+}
+.thirdSection .content button {
+  width: 250px;
+  height: 40px;
+
+  color: #ffffff;
+  font-size: 25px;
+
+  border: 5px solid #e0b740;
+
+  cursor: pointer;
+  transition: ease-in 0.5s;
+
+  background-color: transparent;
+}
+.thirdSection .content button:hover {
+  color: #fff;
+  background-color: #e0b740;
+  border: 5px solid #e0b740;
+}
+.btn-tec {
+  position: absolute;
+  margin: 50px 0 0 250px;
+}
+.btn-player {
+  margin: 300px 0 0px 0;
+}

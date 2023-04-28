@@ -1,0 +1,42 @@
+.header01 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  font-size: 25px;
+
+  padding: 0px 20px 0px 20px;
+}
+.header01 div {
+  display: flex;
+}
+.header01 ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  list-style: none;
+}
+.header01 li {
+  margin: 10px;
+}
+.header01 a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: ease-out 0.5s;
+}
+.header01 a:hover {
+  color: #e0b740;
+  text-decoration: none;
+}
+.colorGold {
+  color: #e0b740;
+}
+
+.FIFA {
+  position: absolute;
+}
+.connection {
+  color: #ffffff;
+  margin-left: 34px;
+}
