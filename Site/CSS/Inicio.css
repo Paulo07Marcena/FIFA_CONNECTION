@@ -30,7 +30,6 @@ body {
 
   background-color: rgba(0, 0, 0, 0.698);
 }
-
 .firstBackground .content {
   width: auto;
 
@@ -42,7 +41,6 @@ body {
   display: flex;
   flex-direction: column;
 }
-
 .firstBackground .content .FIFA {
   font-size: 50px;
   position: absolute;
@@ -85,7 +83,6 @@ body {
   width: auto;
   height: 30px;
 }
-
 @keyframes seeMore {
   0% {
     padding-bottom: 0;
@@ -107,7 +104,7 @@ body {
   flex-direction: column;
   justify-content: end;
 
-  position: relative; /* Adicione essa propriedade */
+  position: relative;
 
   background-color: #f6f6f6;
 }
@@ -137,7 +134,6 @@ body {
 .text .descrition {
   font-size: 18px;
 }
-
 .secondSection .content button {
   width: 310px;
   height: 40px;
@@ -159,7 +155,6 @@ body {
   background-color: #e0b740;
   border: 5px solid #e0b740;
 }
-
 #meu-video {
   width: 100%;
   height: 71%;
@@ -174,8 +169,6 @@ body {
 
   display: flex;
   flex-direction: column;
-
-  /* position: relative; Adicione essa propriedade */
 
   background: #1b1b1b;
 }
@@ -234,8 +227,81 @@ body {
 }
 .btn-tec {
   position: absolute;
-  margin: 50px 0 0 250px;
+  margin: 20px 0 0 18%;
 }
 .btn-player {
-  margin: 300px 0 0px 0;
+  margin: 380px 0 0px 0;
+}
+.description {
+  width: 250px;
+
+  text-align: justify;
+  color: #fff;
+
+  font-weight: none;
+}
+.description01 {
+  margin-top: 65px;
+}
+.description02 {
+  position: absolute;
+  margin: 220px 0 0 0;
+}
+
+/* Quarta seção da página */
+.forthSection {
+  width: 100%;
+  height: 100vh;
+
+  background-color: #f6f6f6;
+  display: flex;
+}
+.content01 {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  padding: 40px 0 250px 140px;
+}
+.forthSection .logo {
+  height: 150px;
+  width: 100px;
+}
+.forthSection .all {
+  display: flex;
+}
+.forthSection .all .text {
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.forthSection button {
+  width: 310px;
+  height: 40px;
+
+  margin-left: 90px;
+
+  color: #000000;
+  font-size: 25px;
+
+  border: 5px solid #e0b740;
+
+  cursor: pointer;
+  transition: ease-in 0.5s;
+
+  background-color: transparent;
+}
+.forthSection button:hover {
+  color: #fff;
+  background-color: #e0b740;
+  border: 5px solid #e0b740;
+}
+.forthSection .card {
+  width: auto;
+  height: 75vh;
+
+  margin: 0 auto;
 }
