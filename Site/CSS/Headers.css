@@ -29,6 +29,10 @@
   color: #e0b740;
   text-decoration: none;
 }
+.header01 a img {
+  width: auto;
+  height: 40px;
+}
 .colorGold {
   color: #e0b740;
 }
@@ -39,4 +43,33 @@
 .connection {
   color: #ffffff;
   margin-left: 34px;
+}
+
+/* footer */
+footer {
+  background-color: #1b1d1e;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+footer a {
+  text-decoration: none;
+  color: #ffffff;
+  margin: 1px;
+}
+footer a:hover {
+  color: #e0b740;
+}
+.p-title {
+  font-size: 20px;
+  color: #e0b740;
+}
+footer .images {
+  display: flex;
+  justify-content: space-between;
+}
+.redes-sociais {
+  width: auto;
+  height: 50px;
+  margin-top: 14px;
 }
