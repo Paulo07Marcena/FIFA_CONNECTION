@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./IMG/LOGO.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="./CSS/Padrao.css" />
+    <link rel="stylesheet" href="./CSS/Headers.css" />
+    <link rel="stylesheet" href="./CSS/simulador.css" />
+
+    <!-- Teste  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <!-- final do teste -->
+    <title>Time dos sonhos</title>
+  </head>
+  <body>
+    <header class="header01">
+      <div>
+        <a href="./inicio.html">
+          <p class="FIFA colorGold">FIFA</p>
+          <p class="connection">CONNECTION</p>
+        </a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="modoCarreiraTreinador.html"./">MODO CARREIRA TREINADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="modoCarreiraJogador.html">MODO CARREIRA JOGADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./Simulador.html">TIME DOS SONHOS</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./jogador.html">JOGADORES</a></li>
+          <li class="colorGold">|</li>
+          <li>
+            <a href="./login.html"><img src="./IMG/user1.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="section01">
+      <div class="container">
+        <div>
+          <img
+            src="IMG/estadioIcone.png"
+            alt="estadio icon"
+            class="estadioIcon"
+          />
+        </div>
+        <div>
+          <div class="card">
+            <p class="multiple-text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section02">
+      <div class="container">
+        <div><h1>ESCOLHA UMA FORMAÇÃO</h1></div>
+        <div class="container02">
+          <button onclick="anterior()">
+            <img src="./IMG/voltar.png" alt="" class="imgBTN" />
+          </button>
+          <div class="container03" id="container03">
+            <img src="./IMG/4-2-2-2.png" alt="" />
+          </div>
+          <button onclick="proximo()">
+            <img src="./IMG/proximo.png" class="imgBTN" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section03">
+      <div><h1>ESCOLHA SEUS JOGADORES</h1></div>
+      <div class="container">
+        <div class="setor01">
+          <div id="container03b" class="container03">
+            <img src="./IMG/4-2-2-2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="setor02">
+          <div class="title">
+            <div class="buscar">
+              <input placeholder="Pesquise um jogador..." />
+              <img src="./IMG/lupa.png" alt="" />
+            </div>
+          </div>
+          <div class="content">1° Neymar Junior</div>
+        </div>
+      </div>
+    </section>
+    <section class="section04">
+      <div class="title">
+        <h1>RESULTADOS:</h1>
+      </div>
+      <div class="content">
+        <div class="card">
+          <h1>ATAQUE</h1>
+        </div>
+        <div class="card">
+          <h1>MEIO</h1>
+        </div>
+        <div class="card">
+          <h1>DEFESA</h1>
+        </div>
+      </div>
+    </section>
+    <section class="section05">
+      <canvas
+        style="width: 50%; height: 40%; color: #fff; font-size: 50px"
+        id="grafico"
+      ></canvas>
+    </section>
+    <footer>
+      <div>
+        <p class="p-title">SOBRE NÓS</p>
+        <a href=""><p>FUNDADOR</p></a>
+        <a href=""><p>OBJETIVO</p></a>
+        <a href=""><p>MISSÃO, VISÃO E VALORES</p></a>
+        <a href=""><p>LOCALIZAÇÃO</p></a>
+      </div>
+      <div>
+        <p class="p-title">SUPORTE</p>
+        <a href=""><p>FALE CONOSCO</p></a>
+        <a href=""><p>FAQ</p></a>
+      </div>
+      <div>
+        <p class="p-title">REDES SOCIAIS</p>
+        <div class="images">
+          <a href="">
+            <img class="redes-sociais" src="./img/facebook.png" alt="" />
+          </a>
+          <a href="">
+            <img class="redes-sociais" src="./IMG/instagram.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+  var image = 0;
+  var typed = new Typed(".multiple-text", {
+    strings: ["SIMULE O SEU TIME DOS SONHOS"],
+    typeSpeed: 100,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true,
+  });
+
+  function proximo() {
+    image++;
+    if (image > 2) {
+      image = 0;
+    }
+    container03.innerHTML = "";
+    if (image == 0) {
+      container03.innerHTML = `
+        <img src="./IMG/4-2-2-2.png" alt="" />
+        `;
+      container03b.innerHTML = `
+        <img src="./IMG/4-2-2-2.png" alt="" />
+        `;
+    } else if (image == 1) {
+      container03.innerHTML = `
+        <img src="./IMG/4-3-3.png" alt="" />
+        `;
+
+      container03b.innerHTML = `
+        <img src="./IMG/4-3-3.png" alt="" />
+        `;
+    } else if (image == 2) {
+      container03.innerHTML = `
+        <img src="./IMG/4-4-2.png" alt="" />
+        `;
+
+      container03b.innerHTML = `
+        <img src="./IMG/4-4-2.png" alt="" />
+        `;
+    }
+  }
+
+  function anterior() {
+    image--;
+    if (image < 0) {
+      image = 2;
+    }
+    container03.innerHTML = "";
+    if (image == 0) {
+      container03.innerHTML = `
+        <img src="./IMG/4-2-2-2.png" alt="" />
+        `;
+
+      container03b.innerHTML = `
+        <img src="./IMG/4-2-2-2.png" alt="" />
+        `;
+    } else if (image == 1) {
+      container03.innerHTML = `
+        <img src="./IMG/4-3-3.png" alt="" />
+        `;
+
+      container03b.innerHTML = `
+        <img src="./IMG/4-3-3.png" alt="" />
+        `;
+    } else if (image == 2) {
+      container03.innerHTML = `
+        <img src="./IMG/4-4-2.png" alt="" />
+        `;
+
+      container03b.innerHTML = `
+        <img src="./IMG/4-4-2.png" alt="" />
+        `;
+    }
+  }
+
+  var config = {
+    type: "radar",
+    data: {
+      labels: ["RIT", "FIN", "PAS", "FÍS", "DEF", "DRI"],
+      datasets: [
+        {
+          label: `Pontos`,
+          data: [90, 59, 40, 45, 50, 85],
+          fill: true,
+          backgroundColor: "#e0b84078",
+          borderColor: "#e0b840",
+          pointBackgroundColor: "#e0b840",
+          pointBorderColor: "#e0b840",
+          pointHoverBackgroundColor: "#e0b840",
+          pointHoverBorderColor: "#e0b840",
+          borderWidth: 3,
+          fontSize: "25px",
+        },
+      ],
+    },
+    options: {
+      tooltips: {
+        callbacks: {
+          label: function (tooltipItem, data) {
+            var label = data.labels[tooltipItem.index];
+            var value = data.datasets[0].data[tooltipItem.index];
+            return label + ": " + value;
+          },
+        },
+      },
+      scale: {
+        ticks: {
+          beginAtZero: true,
+          fontColor: "#000",
+        },
+        pointLabels: {
+          fontColor: "#fff", // define a cor dos rótulos dos pontos como cinza escuro
+        },
+        angleLines: {
+          color: "#e9c254", // define a cor das linhas do gráfico
+        },
+        gridLines: {
+          color: "#e9c254", // define a cor das linhas do grid
+        },
+        scaleLabel: {
+          display: true,
+          labelString: "Pontos",
+          fontColor: "#e9c254", // define a cor do título do rótulo
+        },
+      },
+    },
+  };
+
+  var ctx = document.getElementById("grafico").getContext("2d");
+  var myChart = new Chart(ctx, config);
+</script>
