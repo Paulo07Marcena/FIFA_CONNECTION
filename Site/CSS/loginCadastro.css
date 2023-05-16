@@ -1,0 +1,153 @@
+.header01 {
+  background-color: #000;
+}
+body {
+  background-color: #e0b740;
+}
+.section {
+  width: 100%;
+  height: 92vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+.content {
+  width: 50%;
+  height: 60vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  border-radius: 10px;
+
+  background-color: #fff;
+}
+
+.setores {
+  height: 100%;
+  width: 50%;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.setores div {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+input {
+  height: 25px;
+  width: 70%;
+
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #000;
+
+  padding-left: 5px;
+
+  margin: 8px 0px 8px 0px;
+
+  background-color: #cecece;
+}
+
+
+button {
+  width: 50%;
+
+  border: none;
+  border-radius: 10px;
+
+  padding: 10px;
+
+  cursor: pointer;
+  color: #000000;
+  background-color: #e0b740;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+  font-style: none;
+}
+
+.banner {
+  height: 100%;
+  width: 50%;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+p {
+  margin: 15px;
+  text-align: center;
+}
+span.connection {
+  margin-left: 27.5px;
+  color: #fff;
+}
+
+.setores img{
+  width: 40px;
+}
+
+.banner02 {
+  background-color: #1b1e1d;
+
+  border-radius: 10px 10px 10px 10px;
+
+  color: #fff;
+  font-size: 20px;
+}
+#conteudoBox {
+  position: absolute;
+
+  margin-left: 50%;
+  box-shadow: -10px 5px 5px #0000006f";
+}
+
+.boxError{
+  position: absolute;
+  left: 0;
+  top: 83.9vh;
+
+  width: auto;
+  min-width: 250px;
+  height: 50px;
+
+  border-radius: 0px 10px 0px 0px;
+  padding: 15px;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+
+
+  background-color: #cecece;
+}
+
+.boxError img{
+  height: 20px;
+  width: auto;
+}

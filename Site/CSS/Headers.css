@@ -3,9 +3,13 @@
   align-items: center;
   justify-content: space-between;
 
-  font-size: 25px;
+  height: 8vh;
+
+  font-size: 20px;
 
   padding: 0px 20px 0px 20px;
+
+  background-color: #000;
 }
 .header01 div {
   display: flex;
@@ -31,7 +35,7 @@
 }
 .header01 a img {
   width: auto;
-  height: 40px;
+  height: 35px;
 }
 .colorGold {
   color: #e0b740;
@@ -42,7 +46,7 @@
 }
 .connection {
   color: #ffffff;
-  margin-left: 34px;
+  margin-left: 42px;
 }
 
 /* footer */
