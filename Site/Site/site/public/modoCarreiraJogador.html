@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./IMG/LOGO.png" type="image/x-icon" />
+    <link rel="stylesheet" href="./CSS/Padrao.css" />
+    <link rel="stylesheet" href="./CSS/Headers.css" />
+    <link rel="stylesheet" href="./CSS/modoJogador.css" />
+
+    <title>Modo carreira Jogador</title>
+  </head>
+  <body>
+    <header class="header01">
+      <div>
+        <a href="./index.html">
+          <p class="FIFA colorGold">FIFA</p>
+          <p class="connection">CONNECTION</p>
+        </a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="modoCarreiraTreinador.html"./">MODO CARREIRA TREINADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="modoCarreiraJogador.html">MODO CARREIRA JOGADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./Simulador.html">TIME DOS SONHOS</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./jogador.html">JOGADORES</a></li>
+          <li class="colorGold">|</li>
+          <li>
+            <a href="./login.html"><img src="./IMG/user1.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <section class="section01">
+      <div class="title">
+        <h1>TIMES PARA COMEÇAR SUA CARREIRA COMO JOGADOR</h1>
+      </div>
+      <div class="content">
+        <div id="card01" class="card"><a class="aLogo" target="_blank" href="https://www.bvb.de/"><img class ="imgLogoTime" src="./IMG/borrusiaLogo.png" alt=""></a></div>
+        <div id="card02" class="card"><a class="aLogo" target="_blank" href="https://www.athletic-club.eus/"><img class ="imgLogoTime" src="./IMG/AthleticBilbaoLogo.png" alt=""></a></div>
+        <div id="card03" class="card"><a class="aLogo" target="_blank" href="https://salfordcityfc.co.uk/"><img class ="imgLogoTime" src="./IMG/salfordCityLogo.png" alt=""></a></div>
+      </div>
+    </section>
+    <section class="section02">
+      <div class="title02">
+        <h1>DESAFIOS</h1>
+      </div>
+      <div class="content">
+        <div>
+          <button onclick="anterior()"><img class="imgBTN" src="./IMG/voltar.png" alt="" /></button>
+        </div>
+        <div id="card01b" class="card">
+          <button onclick="mostrarModal(1)">
+            <img class="img_desafios" src="./IMG/LOGO.png" alt="">
+            <h1>PATRIOTA</h1>
+          </button>
+        </div>
+        <div id="card02b" class="card">
+          <button onclick="mostrarModal(2)">
+          <img class="img_desafios" src="./IMG/crescimento.png" alt="">
+          <h1>EVOLUÇÃO</h1>
+          </button>
+        </div>
+        <div id="card03b" class="card">
+          <button onclick="mostrarModal(3)">
+            <img class="img_desafios" src="./IMG/diamante 1.png" alt="">
+            <h1>ESTRADA PARA GLÓRIA</h1>
+          </button>
+        </div>
+        <div>
+          <button onclick="proximo()"><img class="imgBTN" src="./IMG/proximo.png" alt="" /></button>
+        </div>
+      </div>
+    </section>
+    
+
+    <div class="backGround" id="backGround">
+      <div class="modalBox" id="modal">
+        <img src="./IMG/LOGO.png" alt="">
+        <h1 id="titleModal">TESTE</h1>
+        <p id="description">MODAL TESTE</p>
+      </div>
+    </div>
+ 
+
+    <footer>
+      <div>
+        <p class="p-title">SOBRE NÓS</p>
+        <a href="./sobreNos.html"><p>FUNDADOR</p></a>
+        <a href="./sobreNos.html"><p>OBJETIVO</p></a>
+        <a href="./sobreNos.html"><p>MISSÃO, VISÃO E VALORES</p></a>
+        <a href="./sobreNos.html"><p>LOCALIZAÇÃO</p></a>
+      </div>
+      <div>
+        <p class="p-title">SUPORTE</p>
+        <a href="./suporte.html"><p>FALE CONOSCO</p></a>
+        <a href="./suporte.html"><p>FAQ</p></a>
+      </div>
+      <div>
+        <p class="p-title">REDES SOCIAIS</p>
+        <div class="images">
+          <a href="">
+            <img class="redes-sociais" src="./img/facebook.png" alt="" />
+          </a>
+          <a href="">
+            <img class="redes-sociais" src="./IMG/instagram.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="div_background">
+      <div class="containerModal">
+        <!-- Conteúdo do modal -->
+      </div>
+    </div>
+  </body>
+</html>
+
+<script src="./JavaScript/modoJogador.js"></script>

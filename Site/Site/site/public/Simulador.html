@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./IMG/LOGO.png" type="image/x-icon" />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link rel="stylesheet" href="./CSS/Padrao.css" />
+    <link rel="stylesheet" href="./CSS/Headers.css" />
+    <link rel="stylesheet" href="./CSS/simulador.css" />
+    
+    <!-- Link para o toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <!-- Teste  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <!-- final do teste -->
+    <title>Time dos sonhos</title>
+  </head>
+  <body>
+    <header class="header01">
+      <div>
+        <a href="./index.html">
+          <p class="FIFA colorGold">FIFA</p>
+          <p class="connection">CONNECTION</p>
+        </a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="modoCarreiraTreinador.html"./">MODO CARREIRA TREINADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="modoCarreiraJogador.html">MODO CARREIRA JOGADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./Simulador.html">TIME DOS SONHOS</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./jogador.html">JOGADORES</a></li>
+          <li class="colorGold">|</li>
+          <li>
+            <a href="./login.html"><img src="./IMG/user1.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="section01">
+      <div class="container">
+        <div>
+          <img
+            src="IMG/estadioIcone.png"
+            alt="estadio icon"
+            class="estadioIcon"
+          />
+        </div>
+        <div>
+          <div class="card">
+            <p class="multiple-text"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section02">
+      <div class="container">
+        <div><h1>ESCOLHA UMA FORMAÇÃO</h1></div>
+        <div class="container02">
+          <button onclick="anterior()">
+            <img src="./IMG/voltar.png" alt="" class="imgBTN" />
+          </button>
+          <div class="container03" id="container03">
+            <img src="./IMG/4-2-2-2.png" alt="" />
+          </div>
+          <button onclick="proximo()">
+            <img src="./IMG/proximo.png" class="imgBTN" alt="" />
+          </button>
+        </div>
+      </div>
+    </section>
+    <section class="section03">
+      <div><h1>ESCOLHA SEUS JOGADORES</h1></div>
+      <div class="container">
+        <div class="setor01">
+          <div id="container03b" class="container03">
+            <img src="./IMG/4-2-2-2.png" alt="" />
+          </div>
+        </div>
+
+        <div class="setor02">
+          <div class="title">
+            <div class="buscar" id="buscar">
+              <input placeholder="Pesquise um jogador..." id="ipt_nomeJogador" />
+              <button onclick="buscarJogador()"><img src="./IMG/lupa.png" alt="" /></button>
+            </div>
+          </div>
+          <div id="list" class="content"></div>
+        </div>
+      </div>
+    </section>
+    <section class="section04">
+      <div class="title">
+        <h1>RESULTADOS:</h1>
+      </div>
+      <div class="content">
+        <div class="card">
+          <h1>ATAQUE</h1>
+          <h1 id="ataque"></h1>
+        </div>
+        <div class="card">
+          <h1>MEIO</h1>
+          <h1 id="meio"></h1>
+        </div>
+        <div class="card">
+          <h1>DEFESA</h1>
+          <h1 id="defesa"></h1>
+        </div>
+      </div>
+    </section>
+    <section class="section05">
+      <canvas
+        style="width: 50%; height: 40%; color: #fff; font-size: 50px"
+        id="grafico"
+      ></canvas>
+    </section>
+    <footer>
+      <div>
+        <p class="p-title">SOBRE NÓS</p>
+        <a href="./sobreNos.html"><p>FUNDADOR</p></a>
+        <a href="./sobreNos.html"><p>OBJETIVO</p></a>
+        <a href="./sobreNos.html"><p>MISSÃO, VISÃO E VALORES</p></a>
+        <a href="./sobreNos.html"><p>LOCALIZAÇÃO</p></a>
+      </div>
+      <div>
+        <p class="p-title">SUPORTE</p>
+        <a href="./suporte.html"><p>FALE CONOSCO</p></a>
+        <a href="./suporte.html"><p>FAQ</p></a>
+      </div>
+      <div>
+        <p class="p-title">REDES SOCIAIS</p>
+        <div class="images">
+          <a href="">
+            <img class="redes-sociais" src="./img/facebook.png" alt="" />
+          </a>
+          <a href="">
+            <img class="redes-sociais" src="./IMG/instagram.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script src="./JavaScript/simulador.js"></script>
+

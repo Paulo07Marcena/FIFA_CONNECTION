@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/jogador.css" />
+    <link rel="stylesheet" href="./CSS/Headers.css" />
+    <link rel="stylesheet" href="CSS/Padrao.css" />
+
+    <link rel="shortcut icon" href="./IMG/LOGO.png" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="http://www.chartjs.org/dist/2.7.1/Chart.js"></script>
+    <script src="http://www.chartjs.org/samples/latest/utils.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+    <title>Jogadores</title>
+  </head>
+  <body>
+    <header class="header01">
+      <div>
+        <a href="./index.html">
+          <p class="FIFA colorGold">FIFA</p>
+          <p class="connection">CONNECTION</p>
+        </a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="modoCarreiraTreinador.html"./">MODO CARREIRA TREINADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="modoCarreiraJogador.html">MODO CARREIRA JOGADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./Simulador.html">TIME DOS SONHOS</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./jogador.html">JOGADORES</a></li>
+          <li class="colorGold">|</li>
+          <li>
+            <a href="./login.html"><img src="./IMG/user1.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    <section class="section01">
+      <div class="title"><h1>ANALISE SEUS FUTUROS JOGADORES!</h1></div>
+      <div class="content">
+        <div class="card01"><img src="./IMG/jogador-de-futebol.png" alt=""></div>
+        <div class="card02">
+          <div class="buscar">
+            <input placeholder="Pesquise um jogador..." id="ipt_nomeJogador" />
+            <button onclick="buscarJogador()"><img src="./IMG/lupa.png" alt="" /></button>
+          </div>
+          <div class="kps_da_busca">
+            <div class="cards_kps">OVER
+              <p id="p_overall"></p>
+            </div>
+            <div class="cards_kps">POTENCIAL
+              <p id="p_potencial"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section02">
+      <div class="content">
+        <div class="graficobox">
+          <canvas
+          style="width: 300px; height: 300px; color: #fff; font-size: 20px"
+          id="grafico"
+        ></canvas>
+        </div>
+        <div class="kpi_geral">
+          <div id="bom"class="KPI">JOGADOR BOM</div>
+          <div id="medio"class="KPI">JOGADOR NORMAL</div>
+          <div id="ruim"class="KPI">JOGADOR RUIM</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>
+        <p class="p-title">SOBRE NÓS</p>
+        <a href="./sobreNos.html"><p>FUNDADOR</p></a>
+        <a href="./sobreNos.html"><p>OBJETIVO</p></a>
+        <a href="./sobreNos.html"><p>MISSÃO, VISÃO E VALORES</p></a>
+        <a href="./sobreNos.html"><p>LOCALIZAÇÃO</p></a>
+      </div>
+      <div>
+        <p class="p-title">SUPORTE</p>
+        <a href="./suporte.html"><p>FALE CONOSCO</p></a>
+        <a href="./suporte.html"><p>FAQ</p></a>
+      </div>
+      <div>
+        <p class="p-title">REDES SOCIAIS</p>
+        <div class="images">
+          <a href="">
+            <img class="redes-sociais" src="./img/facebook.png" alt="" />
+          </a>
+          <a href="">
+            <img class="redes-sociais" src="./IMG/instagram.png" alt="" />
+          </a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<script>
+var overall = 0;
+var grafico_RIT = 0;
+var grafico_FIN = 0;
+var grafico_PAS = 0;
+var grafico_FIS = 0;
+var grafico_DEF = 0;
+var grafico_DRI = 0;
+var vt_pontosJogador = [ grafico_RIT,grafico_FIN, grafico_PAS, grafico_FIS, grafico_DEF,grafico_DRI];
+
+     // Enviar a mensagem ao apertar o botão (enter)
+   let input = document.getElementById("ipt_nomeJogador");
+   input.addEventListener("keydown", function (evento) {
+     if (evento.key === "Enter") {
+      buscarJogador();
+     }
+   });
+
+
+var config = {
+  type: "radar",
+  data: {
+    labels: ["RIT", "FIN", "PAS", "FÍS", "DEF", "DRI"],
+    datasets: [
+      {
+        label: `Pontos`,
+        data: vt_pontosJogador,
+        fill: true,
+        backgroundColor: "#e0b84078",
+        borderColor: "#e0b840",
+        pointBackgroundColor: "#e0b840",
+        pointBorderColor: "#e0b840",
+        pointHoverBackgroundColor: "#e0b840",
+        pointHoverBorderColor: "#e0b840",
+        borderWidth: 3,
+        fontSize: "25px",
+      },
+    ],
+  },
+  options: {
+    tooltips: {
+      callbacks: {
+        label: function (tooltipItem, data) {
+          var label = data.labels[tooltipItem.index];
+          var value = data.datasets[0].data[tooltipItem.index];
+          return label + ": " + value;
+        },
+      },
+    },
+    scale: {
+      ticks: {
+        beginAtZero: true,
+        fontColor: "#000",
+      },
+      pointLabels: {
+        fontColor: "#fff", // define a cor dos rótulos dos pontos como cinza escuro
+      },
+      angleLines: {
+        color: "#e9c254", // define a cor das linhas do gráfico
+      },
+      gridLines: {
+        color: "#e9c254", // define a cor das linhas do grid
+      },
+      scaleLabel: {
+        display: true,
+        labelString: "Pontos",
+        fontColor: "#e9c254", // define a cor do título do rótulo
+      },
+    },
+  },
+};
+
+var ctx = document.getElementById("grafico").getContext("2d");
+var myChart = new Chart(ctx, config);
+
+function buscarJogador(){
+
+//Recupere o valor da nova input pelo nome do id
+// Agora vá para o método fetch logo abaixo
+var nomeJogador = ipt_nomeJogador.value;
+var erro = false;
+
+if (
+  (nomeJogador == "" || ipt_nomeJogador.length == 0)
+) {
+  alert( `
+    Os dados fornecidos não estão de acordo. Verifique os campos`);
+  
+  erro = true;
+} 
+ 
+if (erro == false){
+  p_overall.innerHTML = "";
+  p_potencial.innerHTML = "";
+
+// Enviando o valor da nova input
+fetch("/usuarios/buscarJogador", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    // crie um atributo que recebe o valor recuperado aqui
+    // Agora vá para o arquivo routes/usuario.js
+    nomeJogadorServer: nomeJogador,
+  }),
+  
+})
+.then(function (resposta) {
+    console.log("resposta: ", resposta.body);
+
+    if (resposta.ok) {
+      console.log("Consulta realizada com sucesso");
+
+      resposta.json().then(function (dadosJogador) {
+                console.log(`Dados recebidos: ${JSON.stringify(dadosJogador)}`);
+                console.log(dadosJogador[0].overall);
+                document.getElementById('p_overall').innerHTML += dadosJogador[0].overall;
+                p_potencial.innerHTML += dadosJogador[0].potencial;
+                overall = dadosJogador[0].overall;
+
+                vt_pontosJogador[0] = Number(dadosJogador[0].rit);
+                console.log(grafico_RIT)
+                vt_pontosJogador[1] = Number(dadosJogador[0].Fin);
+                console.log(grafico_FIN)
+                vt_pontosJogador[2] = Number(dadosJogador[0].Pas);
+                console.log(grafico_PAS)
+                vt_pontosJogador[3] = Number(dadosJogador[0].Fis);
+                console.log(grafico_FIS)
+                vt_pontosJogador[4] = Number(dadosJogador[0].Def);
+                console.log(grafico_DEF)
+                vt_pontosJogador[5] = Number(dadosJogador[0].Dri);
+                console.log(grafico_DRI)
+                console.log(vt_pontosJogador);
+                myChart.update()
+                
+                if( overall < 70){
+                  bom.style = `background-color: #00000086; color: #1b1d1e;`
+                  medio.style = `background-color: #00000086; color: #1b1d1e;`
+                  ruim.style = `background-color: #1b1d1e;  color: #e9c254;`
+                } else if (overall < 90){
+                  bom.style = `background-color: #00000086; color: #1b1d1e;`
+                  medio.style = `background-color: #1b1d1e;  color: #e9c254;`
+                  ruim.style = `background-color: #00000086; color: #1b1d1e;`
+                } else {
+                  medio.style = `background-color: #00000086; color: #1b1d1e;`
+                  bom.style = `background-color: #1b1d1e;  color: #e9c254;`
+                  ruim.style = `background-color: #00000086; color: #1b1d1e;`
+                }
+            });
+    } else {
+      throw "Houve um erro ao tentar realizar a consulta!";
+    }
+  })
+  .catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+  });
+
+return false;
+}
+}
+
+</script>
