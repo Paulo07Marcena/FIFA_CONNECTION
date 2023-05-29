@@ -77,13 +77,10 @@ function cadastrar(req, res) {
     res.status(400).send("Sua senha está undefined!");
   } else {
     // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-    var existe;
     usuarioModel
-      .verificarEmail(email)
+      .cadastrar(nome, email, senha)
       .then(function (resultado) {
         res.json(resultado);
-        existe = resultado.length;
-        console.log("Existe é igual a: " + existe);
       })
       .catch(function (erro) {
         console.log(erro);
@@ -93,26 +90,6 @@ function cadastrar(req, res) {
         );
         res.status(500).json(erro.sqlMessage);
       });
-
-    setTimeout(() => {
-      if (existe == 0) {
-        usuarioModel
-          .cadastrar(nome, email, senha)
-          .then(function (resultado) {
-            res.json(resultado);
-          })
-          .catch(function (erro) {
-            console.log(erro);
-            console.log(
-              "\nHouve um erro ao realizar o cadastro! Erro: ",
-              erro.sqlMessage
-            );
-            res.status(500).json(erro.sqlMessage);
-          });
-      } else {
-        console.log("Não cadastrou!");
-      }
-    }, 5000);
   }
 }
 
@@ -131,7 +108,6 @@ function buscarJogador(req, res) {
         res.json(resultado);
       })
       .catch(function (erro) {
-        console.log("é aqui??");
         console.log(erro);
         console.log(
           "\nHouve um erro ao realizar a consulta ! Erro: ",

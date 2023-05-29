@@ -73,10 +73,10 @@
 
           <div>
             <input class="email-ipt" id="ipt_email" placeholder="EMAIL" />
-            <input class="senha-ipt" id="ipt_senha" placeholder="SENHA" />
+            <input class="senha-ipt" id="ipt_senha" placeholder="SENHA" type="password" />
            </div>
           <div>
-            <button>Entrar</button>
+            <button onclick="entrar()">Entrar</button>
           </div>
         </div>
         <!--  -->
@@ -95,100 +95,5 @@
 
 <script src="./JavaScript/login.js"></script>
 <script src="js/funcoes.js"></script>
-<script>
-  var erro = false;
-
-  function cadastrar() {
-    aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
-    var cadastroNome = ipt_cadastro_nome.value;
-    var cadastroEmail = ipt_cadastro_email.value;
-    var cadastroSenha = ipt_cadastro_senha.value;
-
-    if (
-      (cadastroNome == "" || ipt_cadastro_nome.length <= 1) ||
-      (cadastroEmail == "" || cadastroEmail.indexOf("@") == -1) ||
-      (cadastroSenha == "" || ipt_cadastro_senha.length <= 6)
-    ) {
-      toastr.error(`Os dados fornecidos não estão de acordo. Verifique os campos`);
-      
-      erro = true;
-      finalizarAguardar();
-      return false;
-    } 
-     
-    if (erro == false){
-    // Enviando o valor da nova input
-    fetch("/usuarios/cadastrar", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
-        nomeServer: cadastroNome,
-        emailServer: cadastroEmail,
-        senhaServer: cadastroSenha
-        
-      }),
-      
-    })
-    .then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
+<script src="./JavaScript/login&cadastro.js"></script>
   
-            toastr.success("Cadastro realizado com sucesso!");
-            transition(1);
-  
-            setTimeout(() => {
-  
-              ipt_cadastro_email.value = "";
-              ipt_cadastro_nome.value = "";
-              ipt_cadastro_senha.value = "";
-  
-            }, "2000");
-
-
-        } else {
-          throw "Houve um erro ao tentar realizar o cadastro!";
-        }
-      })
-      .catch(function (resposta) {
-        console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
-      });
-
-    return false;
-
-    }
-  }
-
-
-
-
-
-
-
-
-  toastr.options = {
-  "closeButton": false,
-  "debug": false,
-  "newestOnTop": false,
-  "progressBar": false,
-  "positionClass": "toast-bottom-right",
-  "preventDuplicates": false,
-  "onclick": null,
-  "showDuration": "300",
-  "hideDuration": "1000",
-  "timeOut": "5000",
-  "extendedTimeOut": "1000",
-  "showEasing": "swing",
-  "hideEasing": "linear",
-  "showMethod": "fadeIn",
-  "hideMethod": "fadeOut"
-}
-</script>
