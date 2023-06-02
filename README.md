@@ -1,8 +1,7 @@
 # FIFA CONNECTION
 
-
 <div>
-  <img height="300" width="300" src="https://media.discordapp.net/attachments/1012145512943730709/1099747489910886561/logo.png?width=502&height=502" align="right">
+  <img height="300" width="300" src="Site\Site\site\public\IMG\logo.png" align="right">
   <h1>📘 | FIFA Connection</h1>
   <p> 
     Primeiro projeto individual com a utilização de HTML, CSS, JavaScript e NodeJs.
@@ -20,6 +19,3 @@
   
   # 💻 | Desenvolvedor:
   - PAULO REIS DE MARCENA
-
-  
-  
