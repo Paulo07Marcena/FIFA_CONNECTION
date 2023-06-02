@@ -20,6 +20,11 @@ router.post("/buscarJogador", function (req, res) {
   usuarioController.buscarJogador(req, res);
 });
 
+//Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
+router.post("/record", function (req, res) {
+  usuarioController.record(req, res);
+});
+
 router.post("/autenticar", function (req, res) {
   usuarioController.entrar(req, res);
 });
