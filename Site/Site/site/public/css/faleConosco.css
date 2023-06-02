@@ -1,0 +1,167 @@
+body {
+  background-color: #e0b740;
+}
+
+.connection {
+  margin-left: 27px;
+}
+
+.TITULO {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e0b740;
+  margin-top: 20px;
+}
+
+.FALECONOSCO {
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+}
+
+.FALE-CONOSCO {
+  width: 100%;
+  height: 80vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #e0b740;
+}
+
+.Informações {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  justify-content: flex-start;
+  height: 300px;
+  justify-content: space-between;
+}
+
+.IMG {
+  width: 70px;
+  height: 70px;
+}
+
+.DIV_1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.DIV_2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.DIV_3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.Informações span {
+  padding-left: 10px;
+}
+
+.Formulario {
+  width: 40%;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nomeTelefone {
+  width: 500px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.INPT1 {
+  width: 230px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.INPT2 {
+  width: 230px;
+  height: 40px;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.INPT3 {
+  width: 500px;
+  height: 40px;
+  border-radius: 5px;
+}
+
+.INPT4 {
+  width: 500px;
+  height: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+  border: solid 2px #000;
+}
+
+input {
+  padding: 10px;
+  border: solid 2px #000;
+}
+
+.botao {
+  display: flex;
+  padding-top: 15px;
+  justify-content: center;
+}
+
+.BUTONI {
+  background-color: #000;
+  color: #ffffff;
+  border-radius: 10px;
+  width: 200px;
+  height: 50px;
+  border: none;
+  transition: all 0.3s ease-out;
+  border: none;
+  font-weight: 900;
+}
+
+.BUTONI:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#div_nome {
+  font-size: 13px;
+  display: flex;
+  padding: 3px;
+}
+#div_telefone {
+  font-size: 13px;
+  display: flex;
+  padding: 3px;
+  margin-left: 40px;
+}
+#div_email {
+  font-size: 13px;
+  display: flex;
+  padding: 3px;
+}
+#div_mensagem {
+  font-size: 13px;
+  display: flex;
+  padding: 3px;
+}

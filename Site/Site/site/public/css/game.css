@@ -1,0 +1,104 @@
+main {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: #333;
+
+  padding: 20px 20px 50px;
+}
+
+header {
+  width: 100%;
+  max-width: 800px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+
+  padding: 30px;
+  margin: 0 0 30px;
+  font-size: 1.2em;
+  border-radius: 5px;
+
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+header img {
+  width: 30px;
+  height: auto;
+}
+.grid {
+  width: 100%;
+  max-width: 800px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 15px;
+  margin: 0 auto;
+}
+
+.card {
+  /* width: 50%;
+  aspect-ratio: 3/4; */
+  width: 90px;
+  height: 105px;
+
+  border-radius: 5px;
+  position: relative;
+
+  transition: all 400ms ease;
+  transform-style: preserve-3d;
+
+  background-color: #ccc;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 5px;
+
+  transition: all 400ms ease;
+}
+.front {
+  transform: rotateY(180deg);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.back {
+  background-image: url("../IMG/LOGO.png");
+
+  backface-visibility: hidden;
+
+  background-size: 50%;
+  background-color: #e0b740;
+  background-repeat: no-repeat;
+}
+
+.reveal-card {
+  transform: rotateY(180deg);
+}
+
+.disabled-card {
+  filter: saturate(0);
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 920px) {
+  .grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
