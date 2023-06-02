@@ -93,6 +93,34 @@ function cadastrar(req, res) {
   }
 }
 
+function record(req, res) {
+  // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+  var record = req.body.recordServer;
+  var id = req.body.idServer;
+
+  // Faça as validações dos valores
+  if (record == undefined) {
+    res.status(400).send("Seu record está undefined!");
+  } else if (id == undefined) {
+    res.status(400).send("Seu id está undefined!");
+  } else {
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    usuarioModel
+      .record(record, id)
+      .then(function (resultado) {
+        res.json(resultado);
+      })
+      .catch(function (erro) {
+        console.log(erro);
+        console.log(
+          "\nHouve um erro ao realizar o registro do record! Erro: ",
+          erro.sqlMessage
+        );
+        res.status(500).json(erro.sqlMessage);
+      });
+  }
+}
+
 function buscarJogador(req, res) {
   // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
   var nomeJogador = req.body.nomeJogadorServer;
@@ -124,4 +152,5 @@ module.exports = {
   listar,
   testar,
   buscarJogador,
+  record,
 };
