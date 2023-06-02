@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/Padrao.css" />
+    <link rel="stylesheet" href="./css/faleConosco.css" />
+    <link rel="stylesheet" href="./css/Headers.css" />
+    <link rel="shortcut icon" href="./IMG/LOGO.png" type="image/x-icon" />
+    <title>Suporte -- FIFA Connection</title>
+  </head>
+  <body>
+    <header class="header01">
+      <div>
+        <a href="./index.html">
+          <p class="FIFA colorGold">FIFA</p>
+          <p class="connection">CONNECTION</p>
+        </a>
+      </div>
+      <div>
+        <ul>
+          <li><a href="modoCarreiraTreinador.html"./">MODO CARREIRA TREINADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="modoCarreiraJogador.html">MODO CARREIRA JOGADOR</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./Simulador.html">TIME DOS SONHOS</a></li>
+          <li class="colorGold">|</li>
+          <li><a href="./jogador.html">JOGADORES</a></li>
+          <li class="colorGold">|</li>
+          <li>
+            <a href="./login.html"><img src="./IMG/user1.png" alt="" /></a>
+          </li>
+        </ul>
+      </div>
+    </header>
+    
+
+    <div class="BC2" id="fale_conosco">
+      <div class="TITULO">
+        <span class="FALECONOSCO">FALE CONOSCO</span>
+      </div>
+
+      <div class="FALE-CONOSCO">
+        <div class="Informações">
+          <div class="DIV_1">
+            <img class="IMG" src="./IMG/telefone.png" alt="" />
+            <span class="TELEFONE">(11) 96785-2574</span>
+          </div>
+
+          <div class="DIV_3">
+            <img class="IMG" src="./IMG/google-maps 1.png" alt="" />
+            <span class="ENDEREÇO"
+              >São Paulo, São Paulo, Brasil <br />
+              Rua Haddock Lobo - 595 - 01414-001</span
+            >
+          </div>
+          <div class="DIV_2">
+            <img class="IMG" src="./IMG/o-email.png" alt="" />
+            <span class="EMAIL"> FIFAConnection.atendimento@gmail.com</span>
+          </div>
+        </div>
+
+        <div class="Formulario">
+          <form action="https://formspree.io/f/xbjeenyw" method="POST">
+            <div id="div_nomeTelefone" class="nomeTelefone">
+              <div INP1>
+                <input
+                  name="Nome"
+                  id="INPT1"
+                  class="INPT1"
+                  placeholder="Nome"
+                  maxlength="45"
+                />
+                <div id="div_nome" style="color: red"></div>
+              </div>
+
+              <div INP2>
+                <input
+                  name="Telefone"
+                  id="INPT2"
+                  class="INPT2"
+                  placeholder="Telefone"
+                  type="tel"
+                />
+                <div id="div_telefone" style="color: red"></div>
+              </div>
+            </div>
+            <div INP3>
+              <input
+                name="email"
+                id="INPT3"
+                class="INPT3"
+                placeholder="Endereço de e-mail"
+                type="email"
+              />
+              <div id="div_email" style="color: red"></div>
+            </div>
+
+            <div INP4>
+              <textarea
+                name="mensagem"
+                id="INPT4"
+                class="INPT4"
+                placeholder="Mensagem..."
+                maxlength="350"
+              ></textarea>
+              <div id="div_mensagem" style="color: red"></div>
+            </div>
+
+            <div type="submit" class="botao">
+              <button class="BUTONI" onclick="LIMPAR()">ENVIAR</button>
+            </div>
+
+            <input type="hidden" name="_subject" value="Novo Contato!" />
+            <input type="text" name="_honey" style="display: none" />
+            <input type="hidden" name="_captcha" value="false" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
