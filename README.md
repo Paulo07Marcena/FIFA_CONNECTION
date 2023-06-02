@@ -1,7 +1,7 @@
 # FIFA CONNECTION
 
 <div>
-  <img height="300" width="300" src="Site\Site\site\public\IMG\logo.png" align="right">
+  <img height="300" width="300" src="Site\site\public\IMG\logo.png" align="right">
   <h1>📘 | FIFA Connection</h1>
   <p> 
     Primeiro projeto individual com a utilização de HTML, CSS, JavaScript e NodeJs.
