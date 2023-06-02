@@ -1,0 +1,168 @@
+var player = sessionStorage.NOME_USUARIO;
+var id = sessionStorage.ID_USER;
+var recordBanco = sessionStorage.Record;
+recordBanco = 100;
+var tempo = 0;
+
+player_span.innerHTML = player;
+
+const grid = document.querySelector(".grid");
+const spanPlayer = player;
+const timer = document.querySelector(".timer");
+
+const characters = [
+  "neymar_game.png",
+  "messi_game.png",
+  "deBruine_game.png",
+  "mbappe_game.jpg",
+  "halland_game.png",
+  "vini_game.png",
+  "pele_game.png",
+  "cr7_game.png",
+  "rodrygo_game.png",
+  "lewa_game.png",
+];
+
+const createElement = (tag, className) => {
+  const element = document.createElement(tag);
+  element.className = className;
+  return element;
+};
+
+let firstCard = "";
+let secondCard = "";
+
+const checkEndGame = () => {
+  const disabledCards = document.querySelectorAll(".disabled-card");
+
+  if (disabledCards.length === 20) {
+    clearInterval(this.loop);
+    toastr.success(`Parabéns, ${player}! Seu tempo foi de: ${timer.innerHTML}`);
+    if (tempo < recordBanco || recordBanco == null) {
+      sessionStorage.Record = tempo;
+
+      fetch("/usuarios/record", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          recordServer: tempo,
+          idServer: id,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+
+          if (resposta.ok) {
+            console.log("Record atualizado");
+          } else {
+            throw "Houve um erro ao tentar atualizar o record!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+    }
+  }
+};
+
+const checkCards = () => {
+  const firstCharacter = firstCard.getAttribute("data-character");
+  const secondCharacter = secondCard.getAttribute("data-character");
+
+  if (firstCharacter === secondCharacter) {
+    firstCard.firstChild.classList.add("disabled-card");
+    secondCard.firstChild.classList.add("disabled-card");
+
+    firstCard = "";
+    secondCard = "";
+
+    checkEndGame();
+  } else {
+    setTimeout(() => {
+      firstCard.classList.remove("reveal-card");
+      secondCard.classList.remove("reveal-card");
+
+      firstCard = "";
+      secondCard = "";
+    }, 500);
+  }
+};
+
+const revealCard = ({ target }) => {
+  if (target.parentNode.className.includes("reveal-card")) {
+    return;
+  }
+
+  if (firstCard === "") {
+    target.parentNode.classList.add("reveal-card");
+    firstCard = target.parentNode;
+  } else if (secondCard === "") {
+    target.parentNode.classList.add("reveal-card");
+    secondCard = target.parentNode;
+
+    checkCards();
+  }
+};
+
+const createCard = (character) => {
+  const card = createElement("div", "card");
+  const front = createElement("div", "face front");
+  const back = createElement("div", "face back");
+
+  front.style.backgroundImage = `url('../img/${character}')`;
+
+  card.appendChild(front);
+  card.appendChild(back);
+
+  card.addEventListener("click", revealCard);
+  card.setAttribute("data-character", character);
+
+  return card;
+};
+
+const loadGame = () => {
+  const duplicateCharacters = [...characters, ...characters];
+
+  const shuffledArray = duplicateCharacters.sort(() => Math.random() - 0.5);
+
+  shuffledArray.forEach((character) => {
+    const card = createCard(character);
+    grid.appendChild(card);
+  });
+};
+
+const startTimer = () => {
+  this.loop = setInterval(() => {
+    const currentTime = +timer.innerHTML;
+    timer.innerHTML = currentTime + 1;
+    tempo++;
+  }, 1000);
+};
+
+window.onload = () => {
+  player_span.innerHTML = player;
+  startTimer();
+  loadGame();
+};
+
+toastr.options = {
+  closeButton: false,
+  debug: false,
+  newestOnTop: false,
+  progressBar: false,
+  positionClass: "toast-bottom-right",
+  preventDuplicates: false,
+  onclick: null,
+  showDuration: "300",
+  hideDuration: "1000",
+  timeOut: "5000",
+  extendedTimeOut: "1000",
+  showEasing: "swing",
+  hideEasing: "linear",
+  showMethod: "fadeIn",
+  hideMethod: "fadeOut",
+};

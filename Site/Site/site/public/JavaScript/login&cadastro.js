@@ -100,6 +100,7 @@ function entrar() {
             sessionStorage.EMAIL_USUARIO = json.email;
             sessionStorage.NOME_USUARIO = json.nome;
             sessionStorage.ID_USER = json.idUser;
+            sessionStorage.Record = json.record;
 
             window.location = "./central.html";
           });
